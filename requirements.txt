@@ -1,0 +1,5 @@
+fastapi==0.75.2
+uvicorn[standard]
+scikit-learn
+pyod
+pandas

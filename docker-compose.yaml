@@ -1,0 +1,29 @@
+version: "3"
+services:
+    backend:
+      container_name: api
+      image: api
+      ports:
+        - "8000:8000"
+      command: "python3 -m uvicorn main:app "
+      networks:
+        - nw
+      env:
+        - HOST="0.0.0.0"
+        - PORT="8000"
+    frontend:
+      container_name: front
+      image: front
+      networks:
+        - nw
+      ports:
+        - "3000:3000"
+      command: "npm run dev"
+      env:
+
+network:
+  nw:
+
+#docker compose up -d
+#docker-compose up -d
+#docker compose down
